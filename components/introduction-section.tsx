@@ -3,12 +3,29 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Zap, Target, Sparkles } from "lucide-react"
+import React, { useEffect } from "react";
 
 interface IntroductionSectionProps {
   onNext: () => void
 }
 
-export default function IntroductionSection({ onNext }: IntroductionSectionProps) {
+type IntroModuleProps = {
+  onStart: () => void;
+  onNavStepChange?: (step: "start" | "video" | "cases" | "victory") => void;
+};
+
+
+
+export default function IntroductionSection({ onNext, onNavStepChange }: IntroductionSectionProps) {
+	  
+  
+  useEffect(() => {
+  if (typeof window !== "undefined") {
+    window.scrollTo({ top: 0 });
+  }
+  onNavStepChange?.("start");
+}, [onNavStepChange]);
+
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-500">
       <div className="text-center space-y-4">
@@ -30,7 +47,7 @@ export default function IntroductionSection({ onNext }: IntroductionSectionProps
       <Card className="border-2 border-primary/20 shadow-xl">
         <CardHeader>
           <CardTitle className="text-2xl">Your Mission</CardTitle>
-          <CardDescription>Complete 3 video challenges and prove your knowledge</CardDescription>
+          <CardDescription>Complete 1 video challenge and prove your knowledge</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid md:grid-cols-3 gap-6">
@@ -77,25 +94,25 @@ export default function IntroductionSection({ onNext }: IntroductionSectionProps
               <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-xs font-bold text-primary-foreground">1</span>
               </div>
-              <p className="text-sm leading-relaxed">Watch a short video explaining a key concept</p>
+              <p className="text-sm leading-relaxed">Watch a short video explaining key concepts</p>
             </li>
             <li className="flex items-start gap-3">
               <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-xs font-bold text-primary-foreground">2</span>
               </div>
-              <p className="text-sm leading-relaxed">Answer one question to test your understanding</p>
+              <p className="text-sm leading-relaxed">Explore two real-world cases reveal the power and limits of RCTs</p>
             </li>
             <li className="flex items-start gap-3">
               <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-xs font-bold text-primary-foreground">3</span>
               </div>
-              <p className="text-sm leading-relaxed">Get instant feedback and celebrate your success</p>
+              <p className="text-sm leading-relaxed">Answer questions to test your understanding and get instant feedback</p>
             </li>
             <li className="flex items-start gap-3">
               <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-xs font-bold text-primary-foreground">4</span>
               </div>
-              <p className="text-sm leading-relaxed">Complete all 3 levels to become an RCT expert</p>
+              <p className="text-sm leading-relaxed">Learn all 3 points to build a solid RCT foundation</p>
             </li>
           </ul>
         </CardContent>

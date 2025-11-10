@@ -1,7 +1,7 @@
 // next.config.mjs
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === "production";
-const repo = "RCTs"; // your exact repo name (case-sensitive)
+const repo = "RCTs-v1"; // <— NEW repo name for Version 1
 
 export default {
   output: "export",

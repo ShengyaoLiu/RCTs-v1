@@ -6,7 +6,7 @@ import { Trophy, RotateCcw, CheckCircle2, ExternalLink, BookOpen, ArrowLeft, Che
   ShieldCheck, Scale, Users, Activity, FlaskConical, Clock3, AlertTriangle, BrainCircuit, DollarSign, XCircle
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import React from "react"
+import React, { useEffect, useRef, useState } from "react";
 
 
 interface ResultsSectionProps {
@@ -15,6 +15,11 @@ interface ResultsSectionProps {
   onRestart: () => void
   onBack: () => void
 }
+
+type IntroModuleProps = {
+  
+  onNavStepChange?: (step: "start" | "video" | "cases" | "victory") => void;
+};
 
 const references = [
   {
@@ -44,11 +49,19 @@ const references = [
   },
 ]
 
-export default function ResultsSection({ score, totalQuestions, onRestart, onBack }: ResultsSectionProps) {
+
+export default function ResultsSection({ score, totalQuestions, onRestart, onBack, onNavStepChange }: ResultsSectionProps) {
   const percentage = (score / totalQuestions) * 100
   const passed = percentage >= 67 // 2 out of 3
 
 type Point = { title: string; detail: string; icon: React.ReactNode }
+
+  useEffect(() => {
+  if (typeof window !== "undefined") {
+    window.scrollTo({ top: 0 });
+  }
+  onNavStepChange?.("start");
+}, [onNavStepChange]);
 
 const strengths = React.useMemo<Point[]>(
   () => [
@@ -90,7 +103,7 @@ const weaknesses = React.useMemo<Point[]>(
     },
     {
       title: "May not match real life",
-      detail: "Trial volunteers and clinic rules can differ from everyday care, so results may not fit everyone.",
+      detail: "Trial participants and procedures can differ from everyday care, so results may not reflect everyday clinical practice.",
       icon: <BrainCircuit className="h-4 w-4" aria-hidden />,
     },
     {
