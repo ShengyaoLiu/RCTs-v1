@@ -280,7 +280,7 @@ const Row = function Row({ point, active, onToggle, animateMe }: RowProps) {
 
           {/* STRENGTHS & WEAKNESSES (inside the same card) */}
           <div>
-            <h4 className="text-base font-semibold text-foreground/90">Strengths & Weaknesses of Randomised Clinical Trials</h4>
+            <h4 className="text-base font-semibold text-foreground/90">Strengths & Weaknesses of Randomised Controlled Trials</h4>
             <p className="text-sm text-muted-foreground mb-7">
 			{/*Use this as a quick context check when interpreting your results.*/}
             </p>
