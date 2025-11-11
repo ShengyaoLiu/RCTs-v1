@@ -36,7 +36,9 @@ export default function IntroductionSection({ onNext, onNavStepChange }: Introdu
         <h2 className="text-5xl font-bold text-balance bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Discover the Power of 
 		  </h2>
-		  <h2 className="text-5xl font-bold text-balance bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Randomised Clinical Trials (RCTs)
+		  <h2 className="text-5xl font-bold text-balance bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Randomised Controlled Trials
+		  </h2>
+		  <h2 className="text-5xl font-bold text-balance bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">(RCTs)
 		  
         </h2>
         <p className="text-xl text-muted-foreground text-balance">

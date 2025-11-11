@@ -297,8 +297,8 @@ const nextQuestion = () => {
   <div className="relative aspect-video rounded-md sm:rounded-lg overflow-hidden border border-primary/20 sm:border-2 bg-black">
     <video
       ref={videoRef}
-      src="/rct-intro.mp4"      // 👈 update if your path is different
-      poster="/rct-cover.png"   // 👈 your cover image
+      src="rct-intro.mp4"      // 👈 update if your path is different
+      poster="rct-cover.png"   // 👈 your cover image
       className="w-full h-full object-cover"
       onEnded={handleVideoEnded}
       onPlay={handleVideoPlay}

@@ -12,3 +12,4 @@ export default {
   // optional
   typescript: { ignoreBuildErrors: true },
 };
+

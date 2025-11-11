@@ -1,18 +1,16 @@
 {
   "name": "my-v0-project",
   "version": "0.1.0",
+  "homepage": "https://ShengyaoLiu.github.io/RCTs-v1",
   "private": true,
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "copy-404": "powershell -Command \"Copy-Item -Path out/index.html -Destination out/404.html -Force\"",
-  "nojekyll": "powershell -Command \"New-Item -Path out/.nojekyll -ItemType File -Force > $null\"",
-  "predeploy": "npm run build && npm run copy-404 && npm run nojekyll",
-  "deploy": "gh-pages -d out --dotfiles"
-},
-
-
-
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "copy-404": "powershell -Command \"Copy-Item -Path out/index.html -Destination out/404.html -Force\"",
+    "nojekyll": "powershell -Command \"New-Item -Path out/.nojekyll -ItemType File -Force > $null\"",
+    "predeploy": "npm run build && npm run copy-404 && npm run nojekyll",
+    "deploy": "gh-pages -d out --dotfiles"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "1.2.2",
@@ -55,6 +53,7 @@
     "lucide-react": "^0.454.0",
     "next": "^16.0.1",
     "next-themes": "^0.4.6",
+    "qrcode": "^1.5.4",
     "react": "^19.2.0",
     "react-day-picker": "9.8.0",
     "react-dom": "^19.2.0",

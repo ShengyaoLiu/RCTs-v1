@@ -32,7 +32,7 @@ export function RctProgressNav({ active }: Props) {
         <div>
           <h1 className="text-xl sm:text-2xl font-semibold">RCT Quest</h1>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            Unlock the secrets of Randamised Clinical Trial
+            Unlock the secrets of Randamised Controlled Trial
           </p>
         </div>
 
